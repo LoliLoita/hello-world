@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<driverManifest>
+<driver
+       id="{7BBD1F78-4B96-49C4-8813-A642CD30673D}"
+
+		name="PD4-DIM Controller"
+		author="Remote Technologies Inc."
+		copyright="Copyright 2009 Remote Technologies Inc."
+		deviceManufacturer="Bill Tan"
+		deviceModel="PD4-DIM Controller"
+		driverVersion="1.0"
+
+		minimumRuntimeVersion="1"		
+		minimumSoftwareVersion="9.0"
+		minimumApexVersion = "10.4"
+
+		processorType="XP-8"
+		configSettingsStream="ConfigSettings.xml"
+		systemVariablesStream="SystemVariables.xml"
+		systemFunctionsStream="SystemFunctions.xml"
+		deviceDescriptionStream="DeviceDescription.xml"
+		helpTextStream="instructions.rtf"
+		
+	>
+		<processorScript stream="main.js" />
+
+		<package>
+		<output filename="PD4-DIM Controller" public="false"/>
+      <description>
+        Sample driver showing  PD4-DIM Controller .
+      </description>
+		</package>
+
+	</driver>
+</driverManifest>

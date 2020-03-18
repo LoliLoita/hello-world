@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<variables>
+    <category name="%%Device1_Name%% (Device1) FB" sourceid="DeviceS1" condition="$DeviceCount>=1">
+        <variable name="%%Device1_Name%%_Load1_level_Fb" sysvar="Device1_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device1_Name%%_Load2_level_Fb" sysvar="Device1_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device1_Name%%_Load3_level_Fb" sysvar="Device1_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device1_Name%%_Load4_level_Fb" sysvar="Device1_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>     
+        
+        <variable name="%%Device1_Name%%_Load1_Power_Stat" sysvar="Device1_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power_Stat" />
+        <variable name="%%Device1_Name%%_Load2_Power_Stat" sysvar="Device1_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power_Stat" />
+        <variable name="%%Device1_Name%%_Load3_Power_Stat" sysvar="Device1_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power_Stat" />
+        <variable name="%%Device1_Name%%_Load4_Power_Stat" sysvar="Device1_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power_Stat" />
+        
+        <variable name="%%Device1_Name%%_Load1_Power_On_Fb" sysvar="Device1_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device1_Name%%_Load2_Power_On_Fb" sysvar="Device1_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device1_Name%%_Load3_Power_On_Fb" sysvar="Device1_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device1_Name%%_Load4_Power_On_Fb" sysvar="Device1_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device1_Name%%_Load1_Power_Off_Fb" sysvar="Device1_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device1_Name%%_Load2_Power_Off_Fb" sysvar="Device1_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device1_Name%%_Load3_Power_Off_Fb" sysvar="Device1_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device1_Name%%_Load4_Power_Off_Fb" sysvar="Device1_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />
+    </category>
+    <category name="%%Device2_Name%% (Device2) FB" sourceid="DeviceS2" condition="$DeviceCount>=2">
+        <variable name="%%Device2_Name%%_Load1_level_Fb" sysvar="Device2_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device2_Name%%_Load2_level_Fb" sysvar="Device2_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device2_Name%%_Load3_level_Fb" sysvar="Device2_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device2_Name%%_Load4_level_Fb" sysvar="Device2_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device2_Name%%_Load1_Power_Stat" sysvar="Device2_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device2_Name%%_Load2_Power_Stat" sysvar="Device2_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device2_Name%%_Load3_Power_Stat" sysvar="Device2_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device2_Name%%_Load4_Power_Stat" sysvar="Device2_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />
+        
+        <variable name="%%Device2_Name%%_Load1_Power_On_Fb" sysvar="Device2_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device2_Name%%_Load2_Power_On_Fb" sysvar="Device2_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device2_Name%%_Load3_Power_On_Fb" sysvar="Device2_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device2_Name%%_Load4_Power_On_Fb" sysvar="Device2_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device2_Name%%_Load1_Power_Off_Fb" sysvar="Device2_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device2_Name%%_Load2_Power_Off_Fb" sysvar="Device2_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device2_Name%%_Load3_Power_Off_Fb" sysvar="Device2_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device2_Name%%_Load4_Power_Off_Fb" sysvar="Device2_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />     
+    </category>
+    <category name="%%Device3_Name%% (Device3) FB" sourceid="DeviceS3" condition="$DeviceCount>=3">
+        <variable name="%%Device3_Name%%_Load1_level_Fb" sysvar="Device3_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device3_Name%%_Load2_level_Fb" sysvar="Device3_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device3_Name%%_Load3_level_Fb" sysvar="Device3_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device3_Name%%_Load4_level_Fb" sysvar="Device3_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device3_Name%%_Load1_Power_Stat" sysvar="Device3_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device3_Name%%_Load2_Power_Stat" sysvar="Device3_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device3_Name%%_Load3_Power_Stat" sysvar="Device3_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device3_Name%%_Load4_Power_Stat" sysvar="Device3_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />
+        
+        <variable name="%%Device3_Name%%_Load1_Power_On_Fb" sysvar="Device3_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device3_Name%%_Load2_Power_On_Fb" sysvar="Device3_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device3_Name%%_Load3_Power_On_Fb" sysvar="Device3_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device3_Name%%_Load4_Power_On_Fb" sysvar="Device3_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device3_Name%%_Load1_Power_Off_Fb" sysvar="Device3_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device3_Name%%_Load2_Power_Off_Fb" sysvar="Device3_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device3_Name%%_Load3_Power_Off_Fb" sysvar="Device3_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device3_Name%%_Load4_Power_Off_Fb" sysvar="Device3_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />     
+    </category>
+    <category name="%%Device4_Name%% (Device4) FB" sourceid="DeviceS4" condition="$DeviceCount>=4">
+        <variable name="%%Device4_Name%%_Load1_level_Fb" sysvar="Device4_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device4_Name%%_Load2_level_Fb" sysvar="Device4_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device4_Name%%_Load3_level_Fb" sysvar="Device4_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device4_Name%%_Load4_level_Fb" sysvar="Device4_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device4_Name%%_Load1_Power_Stat" sysvar="Device4_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device4_Name%%_Load2_Power_Stat" sysvar="Device4_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device4_Name%%_Load3_Power_Stat" sysvar="Device4_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device4_Name%%_Load4_Power_Stat" sysvar="Device4_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />
+        
+        <variable name="%%Device4_Name%%_Load1_Power_On_Fb" sysvar="Device4_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device4_Name%%_Load2_Power_On_Fb" sysvar="Device4_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device4_Name%%_Load3_Power_On_Fb" sysvar="Device4_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device4_Name%%_Load4_Power_On_Fb" sysvar="Device4_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device4_Name%%_Load1_Power_Off_Fb" sysvar="Device4_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device4_Name%%_Load2_Power_Off_Fb" sysvar="Device4_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device4_Name%%_Load3_Power_Off_Fb" sysvar="Device4_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device4_Name%%_Load4_Power_Off_Fb" sysvar="Device4_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />     
+    </category>
+    <category name="%%Device5_Name%% (Device5) FB" sourceid="DeviceS5" condition="$DeviceCount>=5">
+        <variable name="%%Device5_Name%%_Load1_level_Fb" sysvar="Device5_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device5_Name%%_Load2_level_Fb" sysvar="Device5_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device5_Name%%_Load3_level_Fb" sysvar="Device5_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device5_Name%%_Load4_level_Fb" sysvar="Device5_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device5_Name%%_Load1_Power_Stat" sysvar="Device5_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device5_Name%%_Load2_Power_Stat" sysvar="Device5_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device5_Name%%_Load3_Power_Stat" sysvar="Device5_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device5_Name%%_Load4_Power_Stat" sysvar="Device5_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />
+        
+        <variable name="%%Device5_Name%%_Load1_Power_On_Fb" sysvar="Device5_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device5_Name%%_Load2_Power_On_Fb" sysvar="Device5_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device5_Name%%_Load3_Power_On_Fb" sysvar="Device5_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device5_Name%%_Load4_Power_On_Fb" sysvar="Device5_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device5_Name%%_Load1_Power_Off_Fb" sysvar="Device5_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device5_Name%%_Load2_Power_Off_Fb" sysvar="Device5_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device5_Name%%_Load3_Power_Off_Fb" sysvar="Device5_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device5_Name%%_Load4_Power_Off_Fb" sysvar="Device5_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />     
+    </category>
+    <category name="%%Device6_Name%% (Device6) FB" sourceid="DeviceS6" condition="$DeviceCount>=6">
+        <variable name="%%Device6_Name%%_Load1_level_Fb" sysvar="Device6_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device6_Name%%_Load2_level_Fb" sysvar="Device6_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device6_Name%%_Load3_level_Fb" sysvar="Device6_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device6_Name%%_Load4_level_Fb" sysvar="Device6_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device6_Name%%_Load1_Power_Stat" sysvar="Device6_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device6_Name%%_Load2_Power_Stat" sysvar="Device6_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device6_Name%%_Load3_Power_Stat" sysvar="Device6_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device6_Name%%_Load4_Power_Stat" sysvar="Device6_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />
+        
+        <variable name="%%Device6_Name%%_Load1_Power_On_Fb" sysvar="Device6_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device6_Name%%_Load2_Power_On_Fb" sysvar="Device6_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device6_Name%%_Load3_Power_On_Fb" sysvar="Device6_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device6_Name%%_Load4_Power_On_Fb" sysvar="Device6_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device6_Name%%_Load1_Power_Off_Fb" sysvar="Device6_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device6_Name%%_Load2_Power_Off_Fb" sysvar="Device6_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device6_Name%%_Load3_Power_Off_Fb" sysvar="Device6_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device6_Name%%_Load4_Power_Off_Fb" sysvar="Device6_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />     
+    </category>
+    <category name="%%Device7_Name%% (Device7) FB" sourceid="DeviceS7" condition="$DeviceCount>=7">
+        <variable name="%%Device7_Name%%_Load1_level_Fb" sysvar="Device7_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device7_Name%%_Load2_level_Fb" sysvar="Device7_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device7_Name%%_Load3_level_Fb" sysvar="Device7_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device7_Name%%_Load4_level_Fb" sysvar="Device7_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device7_Name%%_Load1_Power_Stat" sysvar="Device7_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device7_Name%%_Load2_Power_Stat" sysvar="Device7_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device7_Name%%_Load3_Power_Stat" sysvar="Device7_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device7_Name%%_Load4_Power_Stat" sysvar="Device7_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />
+        
+        <variable name="%%Device7_Name%%_Load1_Power_On_Fb" sysvar="Device7_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device7_Name%%_Load2_Power_On_Fb" sysvar="Device7_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device7_Name%%_Load3_Power_On_Fb" sysvar="Device7_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device7_Name%%_Load4_Power_On_Fb" sysvar="Device7_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device7_Name%%_Load1_Power_Off_Fb" sysvar="Device7_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device7_Name%%_Load2_Power_Off_Fb" sysvar="Device7_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device7_Name%%_Load3_Power_Off_Fb" sysvar="Device7_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device7_Name%%_Load4_Power_Off_Fb" sysvar="Device7_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />     
+    </category>
+    <category name="%%Device8_Name%% (Device8) FB" sourceid="DeviceS8" condition="$DeviceCount>=8">
+        <variable name="%%Device8_Name%%_Load1_level_Fb" sysvar="Device8_Load1_level_Fb" type="integer" sample="100" buttontag="Load1_level"/> 
+        <variable name="%%Device8_Name%%_Load2_level_Fb" sysvar="Device8_Load2_level_Fb" type="integer" sample="100" buttontag="Load2_level"/> 
+        <variable name="%%Device8_Name%%_Load3_level_Fb" sysvar="Device8_Load3_level_Fb" type="integer" sample="100" buttontag="Load3_level"/> 
+        <variable name="%%Device8_Name%%_Load4_level_Fb" sysvar="Device8_Load4_level_Fb" type="integer" sample="100" buttontag="Load4_level"/>
+        
+        <variable name="%%Device8_Name%%_Load1_Power_Stat" sysvar="Device8_Load1_Power_Stat" type="boolean" sample="false" buttontag="Load1_Power" />
+        <variable name="%%Device8_Name%%_Load2_Power_Stat" sysvar="Device8_Load2_Power_Stat" type="boolean" sample="false" buttontag="Load2_Power" />
+        <variable name="%%Device8_Name%%_Load3_Power_Stat" sysvar="Device8_Load3_Power_Stat" type="boolean" sample="false" buttontag="Load3_Power" />
+        <variable name="%%Device8_Name%%_Load4_Power_Stat" sysvar="Device8_Load4_Power_Stat" type="boolean" sample="false" buttontag="Load4_Power" />     
+        
+        <variable name="%%Device8_Name%%_Load1_Power_On_Fb" sysvar="Device8_Load1_Power_On_Fb" type="boolean" sample="false" buttontag="Load1_Power_On_Fb" />
+        <variable name="%%Device8_Name%%_Load2_Power_On_Fb" sysvar="Device8_Load2_Power_On_Fb" type="boolean" sample="false" buttontag="Load2_Power_On_Fb" />
+        <variable name="%%Device8_Name%%_Load3_Power_On_Fb" sysvar="Device8_Load3_Power_On_Fb" type="boolean" sample="false" buttontag="Load3_Power_On_Fb" />
+        <variable name="%%Device8_Name%%_Load4_Power_On_Fb" sysvar="Device8_Load4_Power_On_Fb" type="boolean" sample="false" buttontag="Load4_Power_On_Fb" />
+        
+        <variable name="%%Device8_Name%%_Load1_Power_Off_Fb" sysvar="Device8_Load1_Power_Off_Fb" type="boolean" sample="true" buttontag="Load1_Power_Off_Fb" />
+        <variable name="%%Device8_Name%%_Load2_Power_Off_Fb" sysvar="Device8_Load2_Power_Off_Fb" type="boolean" sample="true" buttontag="Load2_Power_Off_Fb" />
+        <variable name="%%Device8_Name%%_Load3_Power_Off_Fb" sysvar="Device8_Load3_Power_Off_Fb" type="boolean" sample="true" buttontag="Load3_Power_Off_Fb" />
+        <variable name="%%Device8_Name%%_Load4_Power_Off_Fb" sysvar="Device8_Load4_Power_Off_Fb" type="boolean" sample="true" buttontag="Load4_Power_Off_Fb" />
+    </category>
+
+</variables>

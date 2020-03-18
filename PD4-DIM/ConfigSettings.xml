@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<category name="General Settings" description="General Settings">
+		<setting type="mcinteger" name="Connection Type" variable="connectionType" default="0" description="Set Connect type">
+			<choice name="RS232" value="0" />
+			<choice name="Network" value ="1" />
+		</setting>
+	</category>
+	<category name="RS232 Settings" description="RS232 Settings" condition="$connectionType==0">
+		<setting type="serialport" name="Serial Port"  variable="comPort"  description="Serial port select." />
+		<setting type="mcinteger" name="Baud Rate" variable="baudRate" default="9600" description="Select the baud rate to use" >
+      		<choice name="1200" value="1200"/>
+      		<choice name="2400" value="2400"/>
+      		<choice name="4800" value="4800"/>
+      		<choice name="9600" value="9600"/>
+      		<choice name="19200" value="19200"/>
+      		<choice name="38400" value="38400"/>
+      		<choice name="57600" value="57600"/>
+      		<choice name="115200" value="115200"/>
+    	</setting>
+    	<setting type="mcinteger" name="Data Bits"  variable="dataBits" default="8">
+      		<choice name="7" value="7"/>
+      		<choice name="8" value="8"/>
+    	</setting>
+    	<setting type="mcinteger" name="Stop Bits" variable="stopBits" default="1" >
+      		<choice name="1" value="1"/>
+      		<choice name="2" value="2"/>
+    		</setting>
+    		<setting type="mcstring" name="Parity" variable="parity" default="None" >
+      		<choice name="None" value="None"/>
+      		<choice name="Odd" value="Odd"/>
+      		<choice name="Even" value="Even"/>
+    	</setting>
+    		<setting type="mcstring" name="Handshaking" variable="handshaking" default="None" >
+      		<choice name="None" value="None"/>
+      		<choice name="RTS" value="RTS"/>
+      		<choice name="DTR" value="DTR"/>
+    	</setting>
+	</category>
+	<category name="Network Settings" description="Network Settings" condition="$connectionType == 1">
+		<setting type="string"  name="TCP Address" variable="tcpAddress" description="The network address (xxx.xxx.xxx.xxx) or hostname of the unit." default="192.168.0.1" />
+		<setting type="integer" name="TCP Port" variable="tcpPort" description="Select the TCP port to use." default="10000" />
+	</category>
+
+	<category name="PresetCount" description="Preset DeviceCount">
+		<setting type="integer"  name="DeviceCount" variable="DeviceCount" description="Preset the number of Device" default="1" />
+	</category>
+
+	<category name="DeviceName" description="DeviceName Configuration" >
+    	<setting type="string" name="Device1_Name" variable="Device1_Name" default="Device1" description="Please DeviceName" sourceid="DeviceS1" condition="$DeviceCount>=1"/>
+        <setting type="string" name="Device2_Name" variable="Device2_Name" default="Device2" description="Please DeviceName" sourceid="DeviceS2" condition="$DeviceCount>=2"/>
+        <setting type="string" name="Device3_Name" variable="Device3_Name" default="Device3" description="Please DeviceName" sourceid="DeviceS3" condition="$DeviceCount>=3"/>
+        <setting type="string" name="Device4_Name" variable="Device4_Name" default="Device4" description="Please DeviceName" sourceid="DeviceS4" condition="$DeviceCount>=4"/>
+        <setting type="string" name="Device5_Name" variable="Device5_Name" default="Device5" description="Please DeviceName" sourceid="DeviceS5" condition="$DeviceCount>=5"/>
+        <setting type="string" name="Device6_Name" variable="Device6_Name" default="Device6" description="Please DeviceName" sourceid="DeviceS6" condition="$DeviceCount>=6"/>
+        <setting type="string" name="Device7_Name" variable="Device7_Name" default="Device7" description="Please DeviceName" sourceid="DeviceS7" condition="$DeviceCount>=7"/>
+        <setting type="string" name="Device8_Name" variable="Device8_Name" default="Device8" description="Please DeviceName" sourceid="DeviceS8" condition="$DeviceCount>=8"/>
+  	</category>
+
+	<category name="Device_ID" description="DeviceID Configuration"  >
+        <setting type="string" name="Device1_ID" variable="Device1_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS1" condition="$DeviceCount>=1"/>
+        <setting type="string" name="Device2_ID" variable="Device2_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS2" condition="$DeviceCount>=2"/>
+        <setting type="string" name="Device3_ID" variable="Device3_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS3" condition="$DeviceCount>=3"/>
+        <setting type="string" name="Device4_ID" variable="Device4_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS4" condition="$DeviceCount>=4"/>
+        <setting type="string" name="Device5_ID" variable="Device5_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS5" condition="$DeviceCount>=5"/>
+        <setting type="string" name="Device6_ID" variable="Device6_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS6" condition="$DeviceCount>=6"/>
+        <setting type="string" name="Device7_ID" variable="Device7_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS7" condition="$DeviceCount>=7"/>
+        <setting type="string" name="Device8_ID" variable="Device8_ID" description="DeviceID(Hexadecimal)" sourceid="DeviceS8" condition="$DeviceCount>=8"/>
+	</category>
+	
+	
+
+	<category name="Debug Settings" description="Driver debug options" hidden="false">
+		<setting type="boolean" name="Enable Trace" variable="DebugTrace" description="Enable verbose debug output" />
+	</category>
+
+</configuration>

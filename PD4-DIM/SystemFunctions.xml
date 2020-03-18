@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functions>
+    <category name="Device_Ft">
+
+        <function name="Set Level" export="SetLevel" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1_Level"  value="1"/>
+                <choice name="Load2" buttontag="Load2_Level"  value="2"/>
+                <choice name="Load3" buttontag="Load3_Level"  value="3"/>
+                <choice name="Load4" buttontag="Load4_Level"  value="4"/>
+			</parameter>
+			<parameter name="level" type="integer"	min="0"	max="100" default="0" />
+		</function>  
+
+        <function name="Level up" export="Level_Up" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1_Level"  value="1"/>
+                <choice name="Load2" buttontag="Load2_Level"  value="2"/>
+                <choice name="Load3" buttontag="Load3_Level"  value="3"/>
+                <choice name="Load4" buttontag="Load4_Level"  value="4"/>
+			</parameter>
+		</function>
+        
+        <function name="Level dn" export="Level_Dn" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1_Level"  value="1"/>
+                <choice name="Load2" buttontag="Load2_Level"  value="2"/>
+                <choice name="Load3" buttontag="Load3_Level"  value="3"/>
+                <choice name="Load4" buttontag="Load4_Level"  value="4"/>
+			</parameter>
+		</function>    
+
+        <function name="On" export="On" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1"  value="1"/>
+                <choice name="Load2" buttontag="Load2"  value="2"/>
+                <choice name="Load3" buttontag="Load3"  value="3"/>
+                <choice name="Load4" buttontag="Load4"  value="4"/>
+			</parameter>
+		</function> 
+
+        <function name="Off" export="Off" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1"  value="1"/>
+                <choice name="Load2" buttontag="Load2"  value="2"/>
+                <choice name="Load3" buttontag="Load3"  value="3"/>
+                <choice name="Load4" buttontag="Load4"  value="4"/>
+			</parameter>
+		</function>
+
+        <function name="Toggle" export="Toggle" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1"  value="1"/>
+                <choice name="Load2" buttontag="Load2"  value="2"/>
+                <choice name="Load3" buttontag="Load3"  value="3"/>
+                <choice name="Load4" buttontag="Load4"  value="4"/>
+			</parameter>
+		</function>
+
+        <function name="Pause" export="Pause" repeatrate="200">
+			<parameter name="Device" type="mcinteger"  default="1" >
+				<choice name="%%Device1_Name%% (Device1)" condition="$DeviceCount>=1" sourceid="DeviceS1" value="1"/>
+                <choice name="%%Device2_Name%% (Device2)" condition="$DeviceCount>=2" sourceid="DeviceS2" value="2"/>
+                <choice name="%%Device3_Name%% (Device3)" condition="$DeviceCount>=3" sourceid="DeviceS3" value="3"/>
+                <choice name="%%Device4_Name%% (Device4)" condition="$DeviceCount>=4" sourceid="DeviceS4" value="4"/>
+                <choice name="%%Device5_Name%% (Device5)" condition="$DeviceCount>=5" sourceid="DeviceS5" value="5"/>
+                <choice name="%%Device6_Name%% (Device6)" condition="$DeviceCount>=6" sourceid="DeviceS6" value="6"/>
+                <choice name="%%Device7_Name%% (Device7)" condition="$DeviceCount>=7" sourceid="DeviceS7" value="7"/>
+                <choice name="%%Device8_Name%% (Device8)" condition="$DeviceCount>=8" sourceid="DeviceS8" value="8"/>
+			</parameter>
+			<parameter name="Load" type="mcinteger"  default="1" >
+				<choice name="Load1" buttontag="Load1"  value="1"/>
+                <choice name="Load2" buttontag="Load2"  value="2"/>
+                <choice name="Load3" buttontag="Load3"  value="3"/>
+                <choice name="Load4" buttontag="Load4"  value="4"/>
+			</parameter>
+		</function>
+    </category>
+
+</functions>
+    
