@@ -27,25 +27,28 @@ function qscInit(){
     dbgPrint("qscInit strat !!!");
     for(var i=1;i<=DeviceCount;i++){
         devices_ID[i] = Config.Get("Device"+i+"_ID");
-        dbgPrint("devices_ID[i]  is :"+devices_ID[i] +"its type is : " + typeof(devices_ID[i] ));
+        dbgPrint("devices_ID["+ i +"]  is :"+devices_ID[i] +" its type is : " + typeof(devices_ID[i] ));
         // if(devices_ID[i] <16){
         //     devices_ID[i] = "0x0"+devices_ID[i] .toString(16);
         // }else{
         //     devices_ID[i] = "0x"+devices_ID[i] .toString(16);
         // }
-        SystemVars.Write("Device"+devices_ID[i] +"_Load"+i+"_Power_Stat",false);
-        SystemVars.Write("Device"+devices_ID[i] +"_Load"+i+"_Power_On_Fb",false);
-        SystemVars.Write("Device"+devices_ID[i] +"_Load"+i+"_Power_Off_Fb",false);
-        SystemVars.Write("Device"+devices_ID[i] +"_Load"+i+"_level_Fb",0);
-        Persistence.Write("Device"+devices_ID[i] +"_Load"+i+"_level_Fb_Pt",0);
-        cmd_Hex1=toHexString("0xAE",devices_ID[i] ,("0x0"+i),"0x00","0xEE");
-        g_comm.Write(cmd_Hex1);
-        cmd_Hex2=toHexString("0xAE",devices_ID[i] ,("0xB"+i),"0x00","0xEE");
-        g_comm.Write(cmd_Hex2);
+        for(var q = 1;q<=4;q++){
+            SystemVars.Write("Device"+ i +"_Load"+ q +"_Power_Stat",false);
+            SystemVars.Write("Device"+ i +"_Load"+ q +"_Power_On_Fb",false);
+            SystemVars.Write("Device"+ i +"_Load"+ q +"_Power_Off_Fb",true);
+            SystemVars.Write("Device"+ i +"_Load"+ q +"_level_Fb",0);
+            cmd_Hex1=toHexString("0xAE","0x"+devices_ID[i] ,("0x0"+q),"0x00","0xEE");
+            g_comm.Write(cmd_Hex1);
+            cmd_Hex2=toHexString("0xAE","0x"+devices_ID[i] ,("0xB"+q),"0x00","0xEE");
+            g_comm.Write(cmd_Hex2);
+        }
+        dbgPrint("qscInit() Device " + i + "finished!");
+        //Persistence.Write("Device"+devices_ID[i] +"_Load"+i+"_level_Fb_Pt",0);
+
         //temp[i]=27;
         //Temperature_Fb_Write(i,27);
     }
-    
     // if(g_synchronous){
     //     g_Timer.Start(sendHeartBean,internal);
     // }
@@ -57,15 +60,18 @@ function OnCommRx(data){
     //g_Timer.Stop();
 
     //dbgPrint(data.length);
-    dbgPrint("从PD4-DIN发送"+PrintHex(data));
-    var id;
-    if(data.charCodeAt(0)== 0xAE && data.charCodeAt(4)==0xEE){
-        for(i = 1;i<=DeviceCount;i++){
-            if(data.charCodeAt(1) == devices_ID[i]){
-                id = devices_ID[i];
-            }
-        }
-    }
+    dbgPrint("从PD4-DIN接收"+PrintHex(data));
+    dataProcess(data);
+    // var id;
+    // var channel;
+    // var level;
+    // if(data.charCodeAt(0)== 0xAE && data.charCodeAt(4)==0xEE){
+    //     for(i = 1;i<=DeviceCount;i++){
+    //         if(data.charCodeAt(1) == devices_ID[i]){
+    //             id = devices_ID[i];
+    //         }
+    //     }
+    // }
 
     // if(data.charCodeAt(1)==3){
     //     var id = data.charCodeAt(0);
@@ -84,6 +90,27 @@ function OnCommRx(data){
     
 }
 
+function dataProcess(data){
+    dbgPrint("dataProcess data is :" + data);
+    //if(data.charCodeAt(0) == 0xAE && data.charCodeAt(4) == 0xEE){
+    var hexid = data.charCodeAt(1);//
+    for(var i = 1;i <= DeviceCount; i++){
+        if( hexid == devices_ID[i]){
+            dbgPrint("in the loop");
+            dbgPrint("dataProcess id is : " + hexid + " and its type is : " + typeof(hexid)); 
+            var hexchannel = data.charCodeAt(2);
+            dbgPrint("dataProcess hexchannel is : " + hexchannel + " and its type is : " + typeof(hexchannel));
+            var channel = hexchannel.toString(16).mysubstring(1); 
+            dbgPrint("dataProcess channel is : " + channel + " and its type is : " + typeof(channel));
+            var hexlevel = data.charCodeAt(3);
+            dbgPrint("dataProcess hexlevel is : " + hexlevel + " and its type is : " + typeof(hexlevel));
+            var level = Number(hexlevel.toString());
+            dbgPrint("dataProcess level is : " + level + " and its type is : " + typeof(level));
+            dbgPrint("Device"+(i)+"_Load"+channel+"_level_Fb 's value now is :"+level);
+            SystemVars.Write("Device"+ (i) +"_Load"+channel+"_level_Fb",level);
+        }
+    }
+}
 // function Synchronize(id,pm,t,h,voc,speed,innerloop,mode,fs,CH){ //同步
 //     var num;
 //     for(var i=1;i<=DeviceCount;i++){
@@ -125,8 +152,8 @@ function SetLevel(Device, Load, Level){ //亮度 AE ID BX XX EE
     var cmd_Hex="";
     cmd_Hex=toHexString("0xAE","0x"+devices_ID[Device],("0xB"+Load),Level.toString(),"0xEE");
     dbgPrint("Devices Control Code : " + cmd_Hex);
-    Level_Fb_Write(Device,Load,Level);
     Persistence.Write("Device"+Device+"_Load"+Load+"_level_Fb_Pt",Level);
+    Level_Fb_Write(Device,Load,Level);
     if(Level > 0){
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_On_Fb",true);
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Off_Fb",false);
@@ -137,10 +164,10 @@ function SetLevel(Device, Load, Level){ //亮度 AE ID BX XX EE
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Off_Fb",true);
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Stat",false);
     }
-    dbgPrint("devices_ID[Device] is :" + devices_ID[Device]);
-    dbgPrint("SetLevel(Device,Load,level)"+"Device = " + Device + ", Load = " + Load + ", level = " + Level);
+    dbgPrint("devices_ID[Device] is :" + "0x" + devices_ID[Device]);
+    dbgPrint("SetLevel(Device,Load,level)"+" Device = " + Device + ", Load = " + Load + ", level = " + Level);
     g_comm.Write(cmd_Hex);
-    g_comm.Write(toHexString("0xAE",devices_ID[Device],("0xA"+Load),"0xF2","0xEE"));//发送输出状态查询
+    g_comm.Write(toHexString("0xAE","0x"+devices_ID[Device],("0xA"+Load),"0xF2","0xEE"));//发送输出状态查询
 }
 
 
@@ -152,7 +179,7 @@ function Level_Up(Device,Load){
         Level = 100;
     }
     SystemVars.Write("Device"+Device+"_Load"+Load+"_level_Fb",Level);
-    cmd_Hex=toHexString("0xAE",devices_ID[Device],("0xA"+Load),"0x01","0xEE");
+    cmd_Hex=toHexString("0xAE","0x"+devices_ID[Device],("0xA"+Load),"0x01","0xEE");
     g_comm.Write(cmd_Hex);
     dbgPrint("Level_Up Successfully sent!");
     if (Level > 0) {
@@ -165,7 +192,7 @@ function Level_Up(Device,Load){
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Off_Fb",true);
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Stat",false);
     }
-    g_comm.Write(toHexString("0xAE",devices_ID[Device],("0xA"+Load),"0xF2","0xEE"));
+    g_comm.Write(toHexString("0xAE","0x"+devices_ID[Device],("0xA"+Load),"0xF2","0xEE"));
 }
 
 function Level_Dn(Device,Load) {
@@ -190,19 +217,27 @@ function Level_Dn(Device,Load) {
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Off_Fb",true);
         SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Stat",false);
     }
-    g_comm.Write(toHexString("0xAE",devices_ID[Device],("0xA"+Load),"0xF2","0xEE"));
+    g_comm.Write(toHexString("0xAE","0x"+devices_ID[Device],("0xA"+Load),"0xF2","0xEE"));
 }
 
 function On(Device,Load){
-    var Level = Persistence.Read("Device"+Device+"_Load"+Load+"_level_Fb");
-    SetLevel(Device,Load,Level);
-    Level_Fb_Write(Device,Load,Level);
+    // var Level = Persistence.Read("Device"+Device+"_Load"+Load+"_level_Fb_Pt");
+    // dbgPrint("On() Level = " + Level);
+    // if(Level == undefined){
+    //     Level = SystemVars.Read("Device"+Device+"_Load"+Load+"_level_Fb");
+    //     dbgPrint("On() Level in SystemVars = " + Level);
+    // }
+    SetLevel(Device,Load,100);
+    Level_Fb_Write(Device,Load,100);
     SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Stat",true);
     SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_On_Fb",true);
     SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Off_Fb",false);
 }
 
 function Off(Device,Load){
+    // var Level = SystemVars.Read("Device"+Device+"_Load"+Load+"_level_Fb");
+    // dbgPrint("Before Off() Level in SystemVars = " + Level);
+    // Persistence.Write("Device"+Device+"_Load"+Load+"_level_Fb_Pt",Level);
     SetLevel(Device,Load,0);
     Level_Fb_Write(Device,Load,0);
     SystemVars.Write("Device"+Device+"_Load"+Load+"_Power_Stat",false);
@@ -220,7 +255,7 @@ function Toggle(Device,Load){
 }
 
 function Pause(Device,Load){
-    cmd_Hex=toHexString("0xAE",devices_ID[Device],("0xA"+Load),"0x05","0xEE");
+    cmd_Hex=toHexString("0xAE","0x"+devices_ID[Device],("0xA"+Load),"0x05","0xEE");
     g_comm.Write(cmd_Hex);
 }
 // function selectData(number){//查询命令
@@ -250,7 +285,7 @@ function toHexString(a,b,c,d,e){
     for(var i=0;i<data.length;i++){
         cmd_Hex+=String.fromCharCode(data[i]);
     }
-    dbgPrint("向PD4-DIN发送："+PrintHex(cmd_Hex));
+    dbgPrint("向PD4-DIN发送："+ PrintHex(cmd_Hex));
     return cmd_Hex;
 }
 
@@ -264,7 +299,17 @@ function toHexString(a,b,c,d,e){
 //     return checksum;
 // }
 
-
+String.prototype.mysubstring=function(beginIndex,endIndex){
+    var str=this,
+        newArr=[];
+    if(!endIndex){
+        endIndex=str.length;
+    }
+    for(var i=beginIndex;i<endIndex;i++){
+        newArr.push(str.charAt(i));
+    }
+    return newArr.join("");
+}
 // function checkSumCRC(data){
 //     var csSP1SP2 = new Array();
 //     //var SP18;
