@@ -104,3 +104,11 @@ CRC.toString = function (arr, isReverse) {
     var hi = arr[0], lo = arr[1];
     return CRC.padLeft((isReverse ? hi + lo * 0x100 : hi * 0x100 + lo).toString(16).toUpperCase(), 4, '0');
 };
+
+//---------------------------------------------------------Test-----------------------------------------------------------//
+console.log(CRC.ToCRC16('12345678', true));
+console.log(CRC.ToCRC16('12345678', false));
+console.log(CRC.ToModbusCRC16('12345678', true));
+console.log(CRC.ToModbusCRC16("ff 06 10 00 00 01"));
+
+console.log(CRC.ToCRC16('你好，我们测试一下CRC16算法', true));
